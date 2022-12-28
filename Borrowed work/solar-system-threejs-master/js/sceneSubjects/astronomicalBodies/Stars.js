@@ -1,7 +1,7 @@
 function Stars(scene) {
     var vertices = [];
 
-
+    // Random Spread the stars all over the galaxy (canvas).
     var numPoints = 2000;
     for (var i = 0; i < numPoints; i++) {
         var x = THREE.MathUtils.randFloatSpread(2500);
@@ -11,6 +11,7 @@ function Stars(scene) {
         vertices.push(x, y, z);
     }
     
+    // Star components.
     var geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 

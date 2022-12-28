@@ -1,13 +1,15 @@
+// Modal orbital distances, sizes and astrionomical bodies.
 function SolarSystem(scene, time) {
     const loader = new THREE.TextureLoader();
 
     var astrionomicalBodies = [];
 
+    // Create sun
     const solarSystem = new THREE.Group();
     scene.add(solarSystem);
     var sunMesh = createSun("sun", 40, scene, solarSystem, astrionomicalBodies, loader);
 
-
+    // Create planets
     var mercuryOrbit = createOrbit(solarSystem);
     var mercuryMesh = createPlanet("mercury", 3, 60, scene, mercuryOrbit, astrionomicalBodies, loader);
     createOrbitLine(60, scene, astrionomicalBodies);
@@ -125,7 +127,7 @@ function createPlanet(name, size, distanceX, scene, orbit, astrionomicalBodies, 
 
     let texturePath = "assets/textures/" + name + ".jpg";
 
-    //without callback
+    // Without callback
     var texture = loader.load(texturePath);
 
     var material = new THREE.MeshPhongMaterial({ map: texture });
@@ -145,7 +147,7 @@ function createSun(name, size, scene, orbit, astrionomicalBodies, loader) {
 
     let texturePath = "assets/textures/" + name + ".jpg";
 
-    //without callback
+    // Without callback
     var texture = loader.load(texturePath);
     var material = new THREE.MeshBasicMaterial({ map: texture });
     var sunMesh = new THREE.Mesh(geometry, material);
@@ -169,7 +171,5 @@ function createOrbitLine(distanceX, scene, astrionomicalBodies) {
     });
     var mesh = new THREE.Mesh(geometry, material);
     mesh.rotation.x = Math.PI / 2;
-
-    //astrionomicalBodies.push(mesh);
     scene.add(mesh);
 }

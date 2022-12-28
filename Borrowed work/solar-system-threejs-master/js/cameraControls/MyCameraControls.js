@@ -5,8 +5,8 @@ function MyCameraControls(camera, canvas) {
         controls.update();
     }
 
-    // limit the zooming
+    // Zooming limitation
     controls.minDistance = 20;
-    controls.maxDistance = 1250;
+    controls.maxDistance = 1000;
     //controls.zoomSpeed = 0.5;
 }
