@@ -1,0 +1,3 @@
+Files included within this folder except 'Borrowed work' is an attempted manual work.
+We then changed plans by borrowing an open source code made by user Dumitrux on GitHub.
+Credits.txt in the 'Borrowed work' folder for owner credits.

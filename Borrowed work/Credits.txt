@@ -1,0 +1,6 @@
+The source code originally belongs to Dumitrux, the group project follows closely to this open source. 
+
+Link as follow:
+https://github.com/dumitrux/solar-system-threejs
+
+Adjustments and changes made by the group is updated in the GitHub Repository. 
