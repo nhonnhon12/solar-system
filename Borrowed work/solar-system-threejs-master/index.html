@@ -28,6 +28,7 @@
 
             <div class="modal-body">
                 <ul>
+                    <!-- Information stored in PickHelper.js -->
                     <li>Volume: <span id="volumeXEarths"></span> Earths</li>
                     <li>Orbit distance: <span id="orbitDistance"></span> km</li>
                     <li>Equatorial radius: <span id="equatorialRadius"></span> km</li>
@@ -55,38 +56,57 @@
             <h1 id="title">SOLAR SYSTEM</h1>
             <div class="instructions">
                 <div class="desktop">
-                    <p>Double clcik on a planet to know more about it.</p>
-                    <p>You can interact with the app, with both clicks and the wheel.</p>
+                    <p>Credits to user Dumitrux on GitHub.</p>
+                    <p>Double click on a planet for its information display.</p>
+                    <p>Interact with planets with clicks and mouse wheel.</p>
+                    <p>Mobile website also available.</p>
                 </div>
                 <div class="mobile">
+                    <p>Credits to user Dumitrux on GitHub.</p>
                     <p>Top on a planet to know more about it.</p>
                     <p>You can interact with the app, tapping with one and two fingers.</p>
+                    <p>Desktop website also available.</p>
                 </div>
             </div>
             <br>
-            <button id="loadButton">GO AHEAD!</button>
+            <button id="loadButton">Click to begin!</button>
         </div>
     </div>
 
-    
+    <div class="container">
+        <!-- Create a form then add button inside the form -->
+        <form action="https://ide.geeksforgeeks.org/">
+            <button class = "linkButton" type="submit">
+                Click Here
+            </button>
+        </form>
+    </div>
+
+    <!-- Open the following files. -->   
+        <!-- Load Main Page. -->  
     <script src="js/LoadPage.js"></script>
+
+        <!-- Libraries used in the source code. --> 
     <script src='js/libs/three_r120.min.js'></script>
     <script src='js/libs/OrbitControls.js'></script>
     <script src='js/libs/OBJLoader.js'></script>
     <script src='js/libs/MTLLoader.js'></script>
     <script src='js/libs/dat.gui.min.js'></script>
 
+       <!-- Camera controls (zooming), planet information, coloring functions. --> 
     <script src="js/cameraControls/MyCameraControls.js"></script>
     <script src="js/PickHelper.js"></script>
     <script src="js/gui/ColorGUIHelper.js"></script>
 
-
+       <!-- Applies lighting effects. --> 
     <script src="js/sceneSubjects/AmbientLight.js"></script>
     <script src="js/sceneSubjects/SunLight.js"></script>
 
+        <!-- Includes planets and stars. -->
     <script src="js/sceneSubjects/SolarSystem.js"></script>
     <script src="js/sceneSubjects/astronomicalBodies/Stars.js"></script>
 
+        <!-- Scenes management and main function. -->
     <script src="js/SceneManager.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -68,6 +68,25 @@ body {
   cursor: pointer;
 }
 
+.container {
+  position: relative;
+}
+
+.linkButton {
+  background-color: yellow;
+  border: 2px solid black;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 10px 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  }
+
 #myLink {
   text-decoration: none;
   color: white;
