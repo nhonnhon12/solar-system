@@ -2,7 +2,7 @@ function Stars(scene) {
     var vertices = [];
 
     // Random Spread the stars all over the galaxy (canvas).
-    var numPoints = 2000;
+    var numPoints = 100;
     for (var i = 0; i < numPoints; i++) {
         var x = THREE.MathUtils.randFloatSpread(2500);
         var y = THREE.MathUtils.randFloatSpread(2500);

@@ -23,7 +23,7 @@ class PickHelper {
             // save its color
             this.pickedObjectSavedColor = this.pickedObject.material.color;
             // set its emissive color to flashing red/yellow
-            this.pickedObject.material.color = new THREE.Color((time * 8) % 2 > 1 ? 0xFFFF00 : 0xFF0000);
+            // this.pickedObject.material.color = new THREE.Color((time * 8) % 2 > 1 ? 0xFFFF00 : 0xFF0000);
             this.openModal(this.pickedObject.position.x);
         }
     }

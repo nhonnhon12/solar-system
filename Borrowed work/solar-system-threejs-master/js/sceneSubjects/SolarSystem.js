@@ -65,34 +65,34 @@ function SolarSystem(scene, time) {
 
     this.update = function (time) {
         // rotate the planets
-        sunMesh.rotation.y = time * 0.1;
+        sunMesh.rotation.y = time / 200 / 0.27;
 
-        mercuryOrbit.rotation.y = time * 0.08 + 3.5; // rotate around the sun
-        mercuryMesh.rotation.y = time * 0.1; // rotate the planet
+        mercuryOrbit.rotation.y = time / 0.88; // rotate around the sun
+        mercuryMesh.rotation.y = time / 200 / 14.076; // rotate the planet
 
-        venusOrbit.rotation.y = time * 0.07 + 1;
-        venusMesh.rotation.y = time * 0.1;
+        venusOrbit.rotation.y = time / 2.247;
+        venusMesh.rotation.y = time / 200 / 2.43;
 
-        earthOrbit.rotation.y = time * 0.06 - 0.5;
-        earthMesh.rotation.y = time * 0.1;
+        earthOrbit.rotation.y = time / 1000 / 3.6525;
+        earthMesh.rotation.y = time / 200 / 0.01;
 
-        moonOrbit.rotation.y = time * 0.06;
-        moonMesh.rotation.y = time * 0.1;
+        moonOrbit.rotation.y = time / 10 / 0.0273;
+        moonMesh.rotation.y = time / 200 / 0.027;
 
-        marsOrbit.rotation.y = time * 0.05 - 0.1;
-        marsMesh.rotation.y = time * 0.1;
+        marsOrbit.rotation.y = time / 6.87;
+        marsMesh.rotation.y = time / 200 / 0.012;
 
-        jupiterOrbit.rotation.y = time * 0.045 - 1.5;
-        jupiterMesh.rotation.y = time * 0.1;
+        jupiterOrbit.rotation.y = time / 43.326;
+        jupiterMesh.rotation.y = time / 200 / 0.0041;
 
-        saturnOrbit.rotation.y = time * 0.04 - 1.3;
-        saturnMesh.rotation.y = time * 0.1;
+        saturnOrbit.rotation.y = time / 107.6;
+        saturnMesh.rotation.y = time / 200 / 0.0044;
 
-        uranusOrbit.rotation.y = time * 0.03 + 0.5;
-        uranusMesh.rotation.y = time * 0.1;
+        uranusOrbit.rotation.y = time / 306.9;
+        uranusMesh.rotation.y = time / 200 / -0.0072;
 
-        neptuneOrbit.rotation.y = time * 0.02 - 0.5;
-        neptuneMesh.rotation.y = time * 0.1;
+        neptuneOrbit.rotation.y = time / 601.9;
+        neptuneMesh.rotation.y = time / 200 / 0.16;
     }
 
     this.getAstrionomicalBodies = function () {
@@ -134,6 +134,8 @@ function createPlanet(name, size, distanceX, scene, orbit, astrionomicalBodies, 
     var planetMesh = new THREE.Mesh(geometry, material);
 
     planetMesh.position.set(distanceX, 0, 0);
+    planetMesh.receiveShadow = true;
+    planetMesh.castShadow = true;
 
 
     orbit.add(planetMesh);
@@ -159,13 +161,13 @@ function createSun(name, size, scene, orbit, astrionomicalBodies, loader) {
 }
 
 function createOrbitLine(distanceX, scene, astrionomicalBodies) {
-    const innerRadius = distanceX - 1;
+    const innerRadius = distanceX;
     const outerRadius = distanceX + 1;
     const thetaSegments = 80;
     const geometry = new THREE.RingBufferGeometry(innerRadius, outerRadius, thetaSegments);
     const material = new THREE.MeshBasicMaterial({
         color: 0xf5e96c,
-        opacity: 0.2,
+        opacity: 0.3,
         transparent: true,
         side: THREE.DoubleSide
     });

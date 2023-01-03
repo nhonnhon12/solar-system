@@ -2,13 +2,22 @@ import * as THREE from "three";
 import { SUN, MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE } from "./constant/objects.js";
 import { sphereSegment } from "./constant/sphere.js";
 
+const TimeRatio = 365 * 24 * 60 * 60
 const radiusCal = (object) => {
-  return 7
-  return 2 + object.radius * 1/5000;
+  // return 2
+  return 2 + object.radius * 1/50000;
 }
 
 const distantCal = (object) => {
-    return object.distant * 20;
+  return object.index * 20 + object.distant * 35 + 5;
+}
+
+const locationCal = (object, time = 0) => {
+  const distant = distantCal(object);
+  const angle = (2 * Math.PI) * time / 60   ;
+  const x = distant * Math.cos(angle);
+  const y = distant * Math.sin(angle);
+  return { x, y };
 }
 
 const node = document.getElementsByTagName("body")[0];
@@ -24,7 +33,7 @@ const camera = new THREE.PerspectiveCamera(
     );
 camera.position.x = 100;
 camera.position.y = 0;
-camera.position.z = 800;
+camera.position.z = 1000;
 camera.lookAt(0, 0, 0);
 
 // Sun
@@ -120,5 +129,10 @@ document.body.appendChild(renderer.domElement);
 // Ambient Light
 var ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
 scene.add(ambientLight);
+
+// animate
+for (let i = 0; i < 60; i++) {
+  console.log(locationCal(EARTH, i));
+}
 
 renderer.render(scene, camera);

@@ -5,6 +5,7 @@ function SunLight(scene) {
     const intensity = 0.5;
     const sunLight = new THREE.PointLight(color, intensity);
     sunLight.position.set(0, 0, 0);
+    sunLight.castShadow = true;
 
     scene.add(sunLight)
 
