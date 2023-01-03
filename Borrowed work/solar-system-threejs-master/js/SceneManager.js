@@ -54,6 +54,8 @@ function SceneManager(canvas) {
         renderer.gammaInput = true;
         renderer.gammaOutput = true;
 
+        renderer.shadowMapEnabled = true;
+
         return renderer;
     }
 
